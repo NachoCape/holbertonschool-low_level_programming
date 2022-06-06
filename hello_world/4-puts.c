@@ -9,8 +9,7 @@ int main(void)
 {
 	char res[] = "\"Programming is like building a multilingual puzzle";
 
-
 	puts(res);
 
-	(return 0);
+return (0);
 }
