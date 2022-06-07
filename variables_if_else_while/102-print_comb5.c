@@ -16,13 +16,13 @@ int main(void)
 {
 	int i, j, k, l;
 
-	for (i = '0'; i <= '9'; i++)
+	for (i = 48; i <= 57; i++)
 	{
-		for (j = '0' ; j <= '9'; j++)
+		for (j = 48; j <= 57; j++)
 		{
-			for (k = i; k <= '9'; i++)
+			for (k = i; k <= 57; k++)
 			{
-				for (l = j + 1; l <= '9'; j++)
+				for (l = j + 1; l <= 57; l++)
 				{
 					putchar(i);
 					putchar(j);
@@ -33,7 +33,7 @@ int main(void)
 					{
 						putchar(',');
 						putchar(' ');
-					
+					}
 				}
 			}
 		}
