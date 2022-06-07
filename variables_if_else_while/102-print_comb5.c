@@ -25,22 +25,24 @@ int main(void)
 		{
 			for (k = i; k <= 57; k++)
 			{
-				if (i == 48 && j == 48 && k == 49)
-					l = 0;
-				else
-					l = j + 1;
-				for (; l <= 57;)
+				for (l = j + 1; l <= 57; l++)
 				{
+					if (i == 48 && j == 48 && k != 48)
+					{
+						l--;
+					}
 					putchar(i);
 					putchar(j);
 					putchar(' ');
 					putchar(k);
 					putchar(l);
-					if (j != 56)
-					{
-						putchar(',');
-						putchar(' ');
-					}
+					if (i == 57 && j == 56 && k == 57 && l == 57)
+						continue;
+					putchar(',');
+					putchar(' ');
+								
+					if (i == 48 && j == 48 && k != 48)
+						j++;
 				}
 			}
 		}
