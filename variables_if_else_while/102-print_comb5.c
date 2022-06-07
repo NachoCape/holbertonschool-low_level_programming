@@ -40,9 +40,8 @@ int main(void)
 						continue;
 					putchar(',');
 					putchar(' ');
-								
 					if (i == 48 && j == 48 && k != 48)
-						j++;
+						l++;
 				}
 			}
 		}
