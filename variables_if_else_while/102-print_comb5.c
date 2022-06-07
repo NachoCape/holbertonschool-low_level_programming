@@ -25,11 +25,11 @@ int main(void)
 		{
 			if (i < j)
 			{
-				putchar(i);
-				putchar(j);
+				putchar((i / 10) + 48);
+				putchar((i % 10) + 48);
 				putchar(' ');
-				putchar(k);
-				putchar(l);
+				putchar((j / 10) + 48);
+				putchar(j % 10) + 48;
 				if (i == 98 && j == 99)
 					continue;
 				putchar(',');
