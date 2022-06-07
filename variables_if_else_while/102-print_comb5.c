@@ -3,8 +3,11 @@
 /**
  * main - This C program prints all possible combinations
  * of two digits
- * Numbers must be separated by ,, followed by a space
- * 01 and 10 are considered the same combination of the two digits 0 and 1
+ * The numbers should range from 0 to 99
+ * The two numbers should be separated by a space
+ * The combination of numbers must be separated by comma, followed by a space
+ * 00 01 and 01 00 are considered as the same
+ * combination of the numbers 0 and 1
  * Print only the smallest combination of two digits
  * Numbers should be printed in ascending order
  * You can only use putchar five times maximum in your code
@@ -22,7 +25,11 @@ int main(void)
 		{
 			for (k = i; k <= 57; k++)
 			{
-				for (l = j + 1; l <= 57; l++)
+				if (i == 48 && j == 48 && k == 49)
+					l = 0;
+				else
+					l = j + 1;
+				for (; l <= 57;)
 				{
 					putchar(i);
 					putchar(j);
