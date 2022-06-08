@@ -1,7 +1,8 @@
 #include "main.h"
 /**
- * main - This C program alphabet, in lowercase, followed by a new line
- * Return: 0
+ * print_alphabet - This C program print alphabet
+ * Description: prints 1 time the alphabet,
+ * in lowercase, followed by a new line
  */
 
 void print_alphabet(void)
