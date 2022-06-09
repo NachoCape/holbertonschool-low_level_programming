@@ -9,8 +9,8 @@
 
 int main(void)
 {
-	int i, first, second;
-	unsigned int next_term;
+	int i;
+	unsigned long next_term, first, second;
 
 	first = 1;
 	second = 2;
@@ -18,7 +18,7 @@ int main(void)
 	printf("%d, %d, ", 1, 2);
 	for (i = 3; i <= 50; i++)
 	{
-		printf("%u", next_term);
+		printf("%lu", next_term);
 		if (i != 50)
 			printf(", ");
 		first = second;
