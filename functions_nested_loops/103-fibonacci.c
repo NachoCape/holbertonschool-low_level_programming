@@ -21,7 +21,10 @@ int main(void)
 		first = second;
 		second = next_term;
 		next_term = first + second;
-		sum = sum + next_term;
+		if (next_term >= 4000000)
+			break;
+		if (next_term % 2 == 0)
+			sum = sum + next_term;
 	}
 	printf("%lu\n", sum);
 	return (0);
