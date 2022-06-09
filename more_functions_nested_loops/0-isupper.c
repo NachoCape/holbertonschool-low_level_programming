@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * _isupper - checks for uppercase character
  * @c: letter to be check
@@ -13,5 +11,5 @@ int _isupper(int c)
 	if (c >= 'A' && c <= 'Z')
 		res = 1;
 	else
-		res=0;
+		res = 0;
 }
