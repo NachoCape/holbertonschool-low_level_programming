@@ -20,11 +20,17 @@ void times_table(void)
 				_putchar((res % 10) + 48);
 			} else
 			{
-				_putchar(' ');
-				_putchar(res + 48);
+				if (j == 0)
+					_putchar(res + 48);
+				else
+				{
+					_putchar(' ');
+					_putchar(res + 48);
+				}
+
 			}
 			if (j == 9)
-				_putchar('\n');	
+				_putchar('\n');
 			else
 			{
 				_putchar(',');
