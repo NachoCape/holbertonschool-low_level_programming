@@ -59,10 +59,10 @@ int main(void)
 		sig = first + sec;
 	}
 	/** Divide the big numbers(last 6) */
-	w = first / 10000000000;
-	x = first % 10000000000;
-	y = sec / 10000000000;
-	z = sec % 10000000000;
+	w = first / 1000000000;
+	x = first % 1000000000;
+	y = sec / 1000000000;
+	z = sec % 1000000000;
 	/** Last 6 numbers of fibonacci */
 	fibo(w, x, y, z, i);
 	printf("\n");
