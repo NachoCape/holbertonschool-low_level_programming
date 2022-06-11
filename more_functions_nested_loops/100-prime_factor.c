@@ -8,12 +8,16 @@
 
 int main(void)
 {
-	long int i, num;
+	int i;
+	long int num, res;
 
 	num = 612852475143;
-	for (i =  3; i <= num; i += 2)
+	for (i =  2; i <= num; i++)
 		if (num % i == 0)
+		{
 			num = num / i;
-	printf("%ld\n", i);
+			res = i;
+		}
+	printf("%ld\n", res);
 	return (0);
 }
