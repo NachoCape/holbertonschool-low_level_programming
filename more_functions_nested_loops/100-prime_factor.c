@@ -8,18 +8,34 @@
 
 int main(void)
 {
-	int i, j, biggest;
+	long int j, biggest, i, num;
 
-	biggest = 2;
-	for (i = 2; i <= 615.976; i++)
+	num = 612852475143 / 2;
+	biggest = 0;
+	if (num % 2 == 0)
+		continue;
+	else
 	{
-		j = 2;
-		while (j <= i && (i % j == 0))
-			j++;
-		if (i == j - 1)
-			if (j > biggest)
-				biggest = j;
+		for (i = 3; i <= num; i = i + 2)
+		{
+			/**printf("%ld\n",i);*/
+			if (num % i == 0 && i != 3)
+			{
+				for (j = 3; j <= i; j = j + 2)
+					if (i % j == 0)
+					{
+						biggest = j;
+						break;
+					}
+			}
+			if (j == num)
+			{
+				biggest = num;
+				break;
+			}
+			/**printf("%ld\n", biggest);*/
+		}
 	}
-	printf("%d\n", biggest);
+	printf("%ld\n", biggest);
 	return (0);
 }
