@@ -13,7 +13,7 @@ int main(void)
 	num = 612852475143 / 2;
 	biggest = 0;
 	if (num % 2 == 0)
-		continue;
+		biggest = num;
 	else
 	{
 		for (i = 3; i <= num; i = i + 2)
