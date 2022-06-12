@@ -1,4 +1,6 @@
 #include "main.h"
+#include <limits.h>
+#include <stdio.h>
 
 /**
  * expo - calculate how many times 10 wanna be multiplied by himself
@@ -27,7 +29,8 @@ int expo(int count)
 
 void print_number(int n)
 {
-	int aux, aux2, count, digit;
+	int aux, aux2, count, digit, min;
+	char check;
 
 	if (n == 0)
 		_putchar('0');
@@ -35,6 +38,11 @@ void print_number(int n)
 	{
 		if (n < 0)
 		{
+			if (n == INT_MIN)
+			{
+				check = 'y';
+				n = n + 1;
+			}
 			n = n * -1;
 			_putchar('-');
 		}
@@ -48,9 +56,15 @@ void print_number(int n)
 		while (count >= 0)
 		{
 			aux2 = expo(count);
-			count--;
 			digit = n / aux2;
-			_putchar(digit % 10 + '0');
+			if (check == 'y' && count == 0)
+			{
+				min = digit % 10;
+				min = min + 1;
+				_putchar(min + '0');
+			} else
+				_putchar(digit % 10 + '0');
+			count--;
 		}
 	}
 
