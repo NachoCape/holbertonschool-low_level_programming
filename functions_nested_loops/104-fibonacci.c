@@ -41,7 +41,7 @@ void fibo(long int w, long int x, long int y, long int z, int i)
 
 int main(void)
 {
-	unsigned long int i, w, x, y, z, first, sec, sig;
+	unsigned long int i, w, x, y, z, first, sec;
 
 	/** First 91 numbers of fibonacci */
 	first = 1;
