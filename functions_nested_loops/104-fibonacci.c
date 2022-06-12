@@ -2,28 +2,27 @@
 #include <stdio.h>
 
 /**
- * fibo - a
- * @w: first half
- * @x: first half part2
- * @y: second half
- * @z: second half part2
+ * fibo - print the numbers (91-98) of fibonacci
+ * @w: half of 91
+ * @x: half part2 91
+ * @y: half 92
+ * @z: half part2 92
  * @i: continue in i
  */
 void fibo(long int w, long int x, long int y, long int z, int i)
 {
-	long int a, b;
+	unsigned long int a, b;
 
-	while (i <= 98)
+	while (i < 98)
 	{
-		a = w + y;
-		b = x + z;
-		printf("%lu%lu", a, b);
-		if (i != 98)
-			printf(", ");
-		w = y;
-		x = z;
-		y = a;
-		z = b;
+		a = y + (z / 1000000000);
+		b = z % 1000000000;
+		printf(", %ld", a);
+		printf("%ld", b);
+		y = y + w;
+		w = y - w;
+		z = z + x;
+		x = z - x;
 		i++;
 	}
 }
@@ -42,28 +41,24 @@ void fibo(long int w, long int x, long int y, long int z, int i)
 
 int main(void)
 {
-	int i;
-	long int w, x, y, z, first, sec, sig;
+	unsigned long int i, w, x, y, z, first, sec, sig;
 
-	/** First 92 numbers of fibonacci */
+	/** First 91 numbers of fibonacci */
 	first = 1;
 	sec = 2;
-	sig = first + sec;
-	printf("%d, %d, ", 1, 2);
-	for (i = 3; i <= 90; i++)
+	printf("%ld", first);
+	for (i = 1; i < 91; i++)
 	{
-		printf("%lu", sig);
-		printf(", ");
-		first = sec;
-		sec = sig;
-		sig = first + sec;
+		printf(", %ld", sec);
+		sec = first + sec;
+		first = sec - first;
 	}
-	/** Divide the big numbers(last 6) */
+	/** Divide the big numbers (91 and 92) */
 	w = first / 1000000000;
 	x = first % 1000000000;
 	y = sec / 1000000000;
 	z = sec % 1000000000;
-	/** Last 6 numbers of fibonacci */
+	/** Last 7 numbers of fibonacci */
 	fibo(w, x, y, z, i);
 	printf("\n");
 	return (0);
