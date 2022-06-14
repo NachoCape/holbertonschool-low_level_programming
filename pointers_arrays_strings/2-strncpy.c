@@ -25,14 +25,17 @@ int _strlen(char *s)
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	int length1 = _strlen(dest);
-	int length2 = _strlen(src);
-	int i = 0;
+	int length1 = _strlen(dest), length2 = _strlen(src), i = 0;
 
 	while (i <= (length1 - 1) && i < n && i <= length2)
 	{
 		dest[i] = src[i];
 		i++;
+	}
+	if (length2 < n)
+	{
+		for (i = length2 ; i < n ; i++)
+			dest[i] = '\0';
 	}
 	return (dest);
 }
