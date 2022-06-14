@@ -16,7 +16,7 @@ int _strlen(char *s)
 	return (i);
 }
 
-/** 
+/**
  * puts_half - prints half of a string, followed by a new line.
  * @str: string to print
  * Description: The function should print the second half of the string
@@ -31,8 +31,8 @@ void puts_half(char *str)
 
 	if (le % 2 == 0)
 		n = le / 2;
-	else 
-		n = (le - 1) / 2;
+	else
+		n = (le + 1) / 2;
 	while (str[n] != '\0')
 	{
 		_putchar(str[n]);
