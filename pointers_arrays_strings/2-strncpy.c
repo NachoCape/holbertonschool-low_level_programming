@@ -29,7 +29,7 @@ char *_strncpy(char *dest, char *src, int n)
 	int length2 = _strlen(src);
 	int i = 0;
 
-	while (i <= length1 && i < n && i <= length2)
+	while (i <= (length1 - 1) && i < n && i <= length2)
 	{
 		dest[i] = src[i];
 		i++;
