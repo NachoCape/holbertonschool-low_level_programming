@@ -9,6 +9,7 @@
 char *cap_string(char *c)
 {
 	int aux = c[0];
+	char *res = c;
 
 	if (aux >= 'a' && aux <= 'z')
 		aux = aux - 32;
@@ -27,5 +28,5 @@ char *cap_string(char *c)
 		aux = c[0];
 		c++;
 	}
-	return (c);
+	return (res);
 }
