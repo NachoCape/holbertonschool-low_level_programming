@@ -13,7 +13,7 @@ char *leet(char *c)
 
 	while (c[j] != '\0')
 	{
-		for (i = 0; i <= 7; i++)
+		for (i = 0; i <= 9; i++)
 			if (c[j] == arr[i])
 				c[j] = arr2[i];
 		j++;
