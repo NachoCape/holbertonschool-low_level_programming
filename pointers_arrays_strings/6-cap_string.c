@@ -11,8 +11,8 @@ char *cap_string(char *c)
 	int aux = c[0];
 	char *res = c;
 
-	if (aux >= 'a' && aux <= 'z')
-		aux = aux - 32;
+	if (c[0] >= 'a' && c[0] <= 'z')
+		c[0] = c[0] - 32;
 
 	while (*c != '\0')
 	{
