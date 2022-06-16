@@ -20,7 +20,7 @@ void print_diagsums(int *a, int size)
 			res = res + a[i];
 			aux = aux + size + 1;
 		}
-		if (i == aux2)
+		if (i == aux2 && i != (size * size - 1))
 		{
 			res2 = res2 + a[i];
 			aux2 = aux2 + size - 1;
