@@ -23,6 +23,6 @@ char *_strpbrk(char *s, char *accept)
 	}
 	if (*s != '\0')
 		return (s);
-	else 
+	else
 		return ('\0');
 }
