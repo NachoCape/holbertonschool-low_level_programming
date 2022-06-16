@@ -16,11 +16,15 @@ void print_diagsums(int *a, int size)
 	for (i = 0; i <= size * size; i++)
 	{
 		if (i == aux)
+		{
 			res = res + a[i];
+			aux = aux + size + 1;
+		}
 		if (i == aux2)
+		{
 			res2 = res2 + a[i];
-		aux = aux + size + 1;
-		aux2 = aux + size - 1;
+			aux2 = aux + size - 1;
+		}
 	}
 	printf("%d, %d\n", res, res2);
 }
