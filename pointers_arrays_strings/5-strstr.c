@@ -19,11 +19,14 @@ char *_strstr(char *haystack, char *needle)
 			if (*needle == haystack[i])
 				break;
 		if (*needle == haystack[i])
+		{
+			haystack = &haystack[i];
 			break;
+		}
 		needle++;
 	}
 	if (*needle != '\0')
-		return (needle);
+		return (haystack);
 	else
 		return ('\0');
 }
