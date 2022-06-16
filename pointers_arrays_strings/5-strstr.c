@@ -24,13 +24,13 @@ char *_strstr(char *haystack, char *needle)
 		if (needle[k] != '\0')
 			i = i - k;
 		else
-		{
-			haystack = &haystack[i - k];
 			break;
-		}
 	}
-	if (*haystack != '\0')
+	if (needle[k] == '\0')
+	{
+		haystack = &haystack[i - k];
 		return (haystack);
+	}
 	else
 		return ('\0');
 }
