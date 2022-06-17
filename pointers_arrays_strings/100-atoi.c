@@ -64,7 +64,7 @@ int _atoi(char *s)
 		if (digits == 10 && exp == 8)
 		{
 			res = res * -1;
-			res = res + exp;
+			res = res + (exp - 1);
 		} else
 		{
 			res = res + (s[j] - 48) * exp;
