@@ -36,7 +36,7 @@ int expo(int count)
 int _atoi(char *s)
 {
 	int i = 0, j = 0, exp = 0, aux = 0;
-	int digits, flag = 0, res = 0, count_neg = 0;
+	int flag = 0, res = 0, count_neg = 0;
 
 	/**Last occurrence of '-' or '+'*/
 	while (s[i] != '\0' && flag == 0)
@@ -56,22 +56,21 @@ int _atoi(char *s)
 		aux++;
 		i++;
 	}
-	digits = aux;
 	/**acumulate in res the number to return*/
 	for (j = i - aux; j < i; j++)
 	{
 		exp = expo(aux);
-		if (digits == 10 && exp == 8)
+		if (res == 2147483640 && ((s[j] - 48) * exp == 8))
 		{
 			res = res * -1;
-			res = res + (exp - 1);
+			res = res - 8;
 		} else
 		{
 			res = res + (s[j] - 48) * exp;
 			aux--;
 		}
 	}
-	if (digits != 10 && count_neg % 2 == 1)
+	if (res != -2147483648 && count_neg % 2 == 1)
 		res = res * -1;
 	return (res);
 }
