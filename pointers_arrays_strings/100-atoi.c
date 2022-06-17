@@ -65,9 +65,11 @@ int _atoi(char *s)
 		{
 			res = res * -1;
 			res = res + exp;
+		} else
+		{
+			res = res + (s[j] - 48) * exp;
+			aux--;
 		}
-		res = res + (s[j] - 48) * exp;
-		aux--;
 	}
 	if (digits != 10 && count_neg % 2 == 1)
 		res = res * -1;
