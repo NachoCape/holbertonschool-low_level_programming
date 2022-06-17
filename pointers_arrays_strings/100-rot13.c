@@ -3,7 +3,7 @@
 /**
  * rot13 - encodes a string using rot13
  * @s: string of chars
- * Return: a pointer to a string 
+ * Return: a pointer to a string
  */
 
 char *rot13(char *s)
@@ -22,7 +22,7 @@ char *rot13(char *s)
 				s[i] = output[j];
 				break;
 			}
-			j++;	
+			j++;
 		}
 		i++;
 	}
