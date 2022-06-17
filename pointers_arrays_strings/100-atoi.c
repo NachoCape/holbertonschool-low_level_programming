@@ -35,16 +35,15 @@ int expo(int count)
  */
 int _atoi(char *s)
 {
-	int i = 0, j = 0, exp = 0, aux = 0, count_neg = 0;
-	int count_pos = 0, flag = 0, res = 0;
+	int i = 0, j = 0, exp = 0, aux = 0, plusless = 0, flag = 0, res = 0;
 
-	/**Counts the occurence of '-' & '+'*/
+	/**Last occurrence of '-' or '+'*/
 	while (s[i] != '\0' && flag == 0)
 	{
 		if (s[i] == '+')
-			count_pos++;
+			plusless = 1;
 		if (s[i] == '-')
-			count_neg++;
+			plusless = 0;
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 			flag = 1;
@@ -65,7 +64,7 @@ int _atoi(char *s)
 		res = res + (s[j] - 48) * exp;
 		aux--;
 	}
-	if (count_neg > count_pos)
+	if (plusless == 0)
 		res = res * -1;
 	return (res);
 }
