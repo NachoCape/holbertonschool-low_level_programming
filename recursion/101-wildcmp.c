@@ -6,12 +6,14 @@
  * @s1: string of char
  * @s2: string of char
  * @flag: integer
+ * @cond: integer
  * Return: 1 if the strings are equals, otherwise 0
  */
 
 int wildcmp_recu(char *s1, char *s2, int flag, int cond)
 {
 	int res = 0;
+
 	if ((s2[0] != '*') && (s2[0] != '\0'))
 		cond = 0;
 	if (s2[0] == '*')
@@ -37,58 +39,13 @@ int wildcmp_recu(char *s1, char *s2, int flag, int cond)
 		return (0);
 	else if ((s1[0] == '\0') && (s2[0] != '\0'))
 		return (0);
-	else if ((s1[0] != '\0') && ( s2[0] == '\0'))
+	else if ((s1[0] != '\0') && (s2[0] == '\0'))
 		return (0);
 	else if ((s1[0] == '\0') && (s2[0] == '\0'))
 		return (1);
 	res = (wildcmp_recu(s1, s2, flag, cond));
-	return res;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/**	printf("%c  %c\n", *s1, *s2);
-		if ((s2[0] != '\0') && (s2[0] == '*'))
-	{
-		s2++;
-		flag = 1;
-	 	res = wildcmp_recu(s1, s2, flag);
-	}
-		if ((flag == 1) && (s1[0] != '\0') && (s1[0] != s2[0]))
-	{
-		s1++;
-		res = wildcmp_recu(s1, s2, flag);
-	}
-		if ((flag == 0) && (s1[0] != '\0') && (s1[0] != s2[0]))
-		return (0);
-		if ((s1[0] != '\0') && (s2[0] != '\0') && (s1[0] == s2[0]))
-	{
-		s1++;
-		s2++;
-		res = wildcmp_recu(s1, s2, flag);
-	}
-	if ((s1[0] == '\0') && (s2[0] == '\0'))
-		return (1);
-	if ((s1[0] == '\0') && (s2[0] == '*'))
-	{
-		s2++;
-		res = wildcmp_recu(s1, s2, flag);
-	}
-	if (((s1[0] == '\0') && (s2[0] != '\0')) || ((s1[0] != '\0') && (s2[0] == '\0')))
-		return (0);
-	res = wildcmp_recu(s1, s2, flag);
 	return (res);
-
-}*/
+}
 
 /**
  * wildcmp - compares two strings
