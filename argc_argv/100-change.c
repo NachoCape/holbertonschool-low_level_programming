@@ -11,10 +11,8 @@
 
 int change_recu(int num, int count)
 {
-	int res= 0;
-
 	if (num == 0)
-		return count;
+		return (count);
 	if (num >= 25)
 	{
 		count = count + (num / 25);
@@ -56,16 +54,14 @@ int main(int argc, char *argv[])
 	{
 		printf("Error\n");
 		return (1);
-	} else 
+	}
+	num = atoi(argv[1]);
+	if (num < 0)
+		printf("0\n");
+	else
 	{
-		num = atoi(argv[1]);
-		if (num < 0)
-			printf("0\n");
-		else
-		{
-			res = change_recu(num, count);
-			printf("%d\n", res);
-		}
+		res = change_recu(num, count);
+		printf("%d\n", res);
 	}
 	return (0);
 }
