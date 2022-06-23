@@ -21,10 +21,10 @@ char *_strdup(char *str)
 	int i = 0;
 
 	if (str != NULL)
-		res = malloc(_strlen(str + 1));
+		res = malloc(_strlen(str));
 	if (res != NULL)
 	{
-		for (; i <= _strlen(str); i++)
+		for (i = 0; i <= _strlen(str); i++)
 			res[i] = str[i];
 	}
 	return (res);
