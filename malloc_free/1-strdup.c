@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include "2-strlen.c"
 
 /**
  * _strdup - copy of the string given as a parameter
@@ -16,12 +17,14 @@
 
 char *_strdup(char *str)
 {
-	char *res = malloc(sizeof(str));
+	char *res = NULL;
 	int i = 0;
 
+	if (str != NULL)
+		res = malloc(_strlen(str));
 	if (res != NULL)
 	{
-		for (; str[i] != '\0'; i++)
+		for (i = 0; str[i] != '\0'; i++)
 			res[i] = str[i];
 	}
 	return (res);
