@@ -12,13 +12,13 @@ void *malloc_checked(unsigned int b)
 {
 	int *res = NULL;
 
-	res = malloc(b * sizeof(unsigned int));
+	res = malloc(b * sizeof(int));
 	if (res == NULL)
 	{
 		_putchar('9');
 		_putchar('8');
 		_putchar('\n');
-		exit(0);
+		exit(EXIT_FAILURE);
 	} else 
 		return (res);
 }
