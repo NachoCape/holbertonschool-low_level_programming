@@ -16,15 +16,10 @@ char *str_concat(char *s1, char *s2)
 	char *res = NULL;
 	int i = 0, j = 0;
 
-	if (s1 != NULL && s2 != NULL)
-		res = malloc(_strlen(s1) + _strlen(s2));
-	else if (s1 != NULL)
-		res = malloc(_strlen(s1) + 1);
-	else
-		res = malloc(_strlen(s2) + 1);
+	res = malloc(_strlen(s1) + _strlen(s2));
 	if (res != NULL)
 	{
-		for (i = 0; i < _strlen(s1); i++)
+		for (; i < _strlen(s1); i++)
 			res[i] = s1[i];
 		for (; i < (_strlen(s1) + _strlen(s2)); i++, j++)
 			res[i] = s2[j];
