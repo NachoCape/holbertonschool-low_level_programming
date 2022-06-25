@@ -57,7 +57,7 @@ char **strtow(char *str)
 			i++;
 	}
 	if (str != NULL && *str != '\0' && count_words > 0)
-		res = malloc(count_words * sizeof(char *) + 1);
+		res = malloc(count_words * sizeof(char *) + 8);
 	if (res != NULL)
 	{
 		for (; j < count_words; j++)
