@@ -7,6 +7,7 @@
  * @s1: string of chars
  * @s2: string of chars
  * @n: unsigned int
+ *
  * Description: If the function fails, it should return NULL
  * If n is greater or equal to the length of s2 then use the entire string s2
  * if NULL is passed, treat it as an empty string
@@ -22,13 +23,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (n >= len2)
 	{
-		res = malloc(len1 + len2 + 1);
+		res = malloc(len1 + len2 + 4);
 		n = len1 + len2 + 1;
 	} else
 	{
-		res = malloc(len1 + n + 1);
+		res = malloc(len1 + n + 4);
 		n = len1 + n + 1;
 	}
+	printf("len1 = %d\nlen2 = %d\nn = %d\nres = %d\n", len1, len2, n - len1 - 1, len1 + (n - len1 - 1) + 1);
 	if (res != NULL)
 	{
 		for (; i < len1; i++)
