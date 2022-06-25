@@ -73,10 +73,6 @@ char **strtow(char *str)
 				str++;
 			}
 		}
-		if (count_words == 0)
-			res[j] = NULL;
-		else
-			res[j + 1] = NULL;
 	}
 	return (res);
 }
