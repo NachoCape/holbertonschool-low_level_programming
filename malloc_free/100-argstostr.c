@@ -26,19 +26,10 @@ char *argstostr(int ac, char **av)
 		for (; i < ac; i++)
 		{
 			for (j = 0; j < av[i][j]; j++, len++)
-			{
-				/**printf("len = %d\n", len);
-				 * printf("av[i][j] = %c\n", av[i][j]);*/
 				res[len] = av[i][j];
-				/*printf("res[len] = %c\n", res[len]);*/
-			}
 			res[len++] = '\n';
-			/**printf("res en 6 = %c\n", res[len]);
-			 * printf("strlen(av[i] = %d\nlen = %d\n",
-			 * _strlen(av[i]), len);*/
 		}
 		res[len] = '\0';
-		/*printf("%s\n", res);*/
 	}
 	return (res);
 }
