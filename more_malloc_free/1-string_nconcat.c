@@ -23,11 +23,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (n >= len2)
 	{
-		res = malloc(sizeof(s1) + sizeof(s2) - 1);
+		res = malloc(len1 + len2 + 6);
 		n = len1 + len2 + 1;
 	} else
 	{
-		res = malloc(sizeof(s1) + n - 1);
+		res = malloc(len1 + n + 6);
 		n = len1 + n + 1;
 	}
 	if (res != NULL)
