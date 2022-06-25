@@ -43,9 +43,9 @@ char **strtow(char *str)
 	char **res = NULL;
 	int i = 0, j = 0, k = 0, count_words = 0, flag = 0, l = 0;
 
-	while (str != NULL && str[i] != '\0')
+	while ((str != NULL) && (str[i] != '\0'))
 	{
-		while (str[i] != '\0' && str[i] != ' ')
+		while ((str[i] != '\0') && (str[i] != ' '))
 		{
 			i++;
 			flag = 1;
@@ -53,16 +53,15 @@ char **strtow(char *str)
 		if (flag == 1)
 			count_words++;
 		flag = 0;
-		i++;
+		if (str[i] != '\0')
+			i++;
 	}
 	if (str != NULL && *str != '\0' && count_words > 0)
-		res = malloc(count_words * sizeof(char *));
+		res = malloc(count_words * sizeof(char *) + 1);
 	if (res != NULL)
 	{
-/**		printf("count_words = %d\n",count_words);*/
 		for (; j < count_words; j++)
 		{
-/**			printf("len_word(%d) = %d\n", j, len_word(str));*/
 			res[j] = malloc(len_word(str) + 1);
 			if (res[j] != NULL)
 			{
@@ -75,6 +74,7 @@ char **strtow(char *str)
 				str++;
 			}
 		}
+		res[j + 1] = NULL;
 	}
 	return (res);
 }
