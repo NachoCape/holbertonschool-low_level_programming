@@ -45,7 +45,7 @@ char **strtow(char *str)
 
 	while (str != NULL && str[i] != '\0')
 	{
-		while (str[i] != ' ')
+		while (str[i] != '\0' && str[i] != ' ')
 		{
 			i++;
 			flag = 1;
@@ -56,11 +56,13 @@ char **strtow(char *str)
 		i++;
 	}
 	if (str != NULL && *str != '\0' && count_words > 0)
-		res = malloc(count_words * sizeof(char *) + 1);
+		res = malloc(count_words * sizeof(char *));
 	if (res != NULL)
 	{
+/**		printf("count_words = %d\n",count_words);*/
 		for (; j < count_words; j++)
 		{
+/**			printf("len_word(%d) = %d\n", j, len_word(str));*/
 			res[j] = malloc(len_word(str) + 1);
 			if (res[j] != NULL)
 			{
