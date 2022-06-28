@@ -5,7 +5,7 @@
  * parameter on each element of an array.
  * @array: array of integer
  * @size: size of the array of type size_t
- * action: pointer function
+ * @action: pointer function
  * Return: void
  */
 
