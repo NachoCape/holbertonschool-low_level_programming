@@ -65,7 +65,7 @@ void print_all(const char * const format, ...)
 					print_separator(format, i);
 				} else
 				{
-					printf("(nil), ");
+					printf("(nil)");
 					print_separator(format, i);
 				}
 				break;
