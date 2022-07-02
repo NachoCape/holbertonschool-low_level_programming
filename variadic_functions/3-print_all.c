@@ -3,13 +3,15 @@
 #include <stdlib.h>
 
 /**
- * void print_separator - print separator
- *
+ * print_separator - print separator
+ * @format: is a list of types of arguments passed to the function
+ * @i: integer
+ * Return: void
  */
 
 void print_separator(const char * const format, int i)
 {
-	if (format[i + 1] != '\0')
+	if (format != NULL && format[i + 1] != '\0')
 		printf(", ");
 }
 
@@ -17,7 +19,7 @@ void print_separator(const char * const format, int i)
  * print_all - prints anything
  * @format: is a list of types of arguments passed to the function
  *
- * Description: 
+ * Description:
  * c: char
  * i: integer
  * f: float
@@ -44,7 +46,7 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c':
-				printf("%c",va_arg(ap, int));
+				printf("%c", va_arg(ap, int));
 				print_separator(format, i);
 				break;
 			case 'i':
