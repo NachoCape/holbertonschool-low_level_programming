@@ -14,10 +14,7 @@ int pop_listint(listint_t **head)
 	if (!*head)
 		return (res);
 	aux = *head;
-	if ((*head)->next)
-		*head = (*head)->next;
-	else
-		*head = NULL;
+	*head = (*head)->next;
 	res = aux->n;
 	free(aux);
 	return (res);
