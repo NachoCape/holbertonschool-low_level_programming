@@ -22,7 +22,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		p = p->next;
 		i++;
 	}
-	if (!p)
+	if (!p && i != idx - 1)
 		return (NULL);
 	if (idx == 0)
 		nodo = add_nodeint(head, n);
