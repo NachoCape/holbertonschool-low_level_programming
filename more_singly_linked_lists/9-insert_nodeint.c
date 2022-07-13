@@ -16,7 +16,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	unsigned int i = 0;
 
 	if (!p && idx == 0)
-		nodo = add_nodeint(head, n);
+		return (add_nodeint(head, n));
 	while (p && i < idx - 1)
 	{
 		p = p->next;
