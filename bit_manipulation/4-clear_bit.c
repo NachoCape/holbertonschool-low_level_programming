@@ -12,11 +12,10 @@ int clear_bit(unsigned long int *n, unsigned int index)
 {
 	if (!n || index > 64)
 		return (-1);
-	/** agrego 0 a 1 index veces, por ejemplo si index es 3
-	 * el resultado es 1000, luego al hacer ~ el resultado es 0111
-	 * si n = 1024 en binario es 1000, luego al usar & el resultado es
-	 * 0000
-	 */
+	/* agrego 0 a 1 index veces, por ejemplo si index es 3*/
+	/* el resultado es 1000, luego al hacer ~ el resultado es 0111*/
+	/* si n = 1024 en binario es 1000, luego al usar & el resultado es*/
+	/* 0000*/
 	*n &= ~(1 << index);
 	return (1);
 }
