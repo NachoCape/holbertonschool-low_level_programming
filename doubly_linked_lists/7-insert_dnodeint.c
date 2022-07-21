@@ -24,7 +24,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			node = add_dnodeint_end(h, n);
 		else
 		{
-			while (idx != i - 1)
+			while (i != idx - 1)
 			{
 				i++;
 				aux = aux->next;
