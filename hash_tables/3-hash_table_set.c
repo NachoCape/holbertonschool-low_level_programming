@@ -25,11 +25,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	ki = key_index((unsigned char *)new_key, ht->size);
 	node->key = new_key;
 	node->value = new_value;
+	node->next = NULL;
 	if (!ht->array[ki])
 		ht->array[ki] = node;
 	else
 	{
-		node->next = ht->array[ki];
+		free(ht->array[ki]);
 		ht->array[ki] = node;
 	}
 	return (1);
