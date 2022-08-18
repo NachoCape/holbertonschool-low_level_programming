@@ -45,6 +45,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			free(ht->array[ki]->value);
 			ht->array[ki]->value = new_value;
+			free(node->key);
+			free(node);
 		} else
 		{
 			node->next = ht->array[ki];
